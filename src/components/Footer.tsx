@@ -6,7 +6,7 @@ interface FooterProps {
   footers: Footer[];
 }
 export const Footer: React.FC<FooterProps> = ({ footers }) => (
-  <div className="sticky mb-0 space-x-8 flex">
+  <div className="sticky my-4 space-x-8 flex">
     {footers.map((e, i) => (
       <>
         {i !== 0 && (

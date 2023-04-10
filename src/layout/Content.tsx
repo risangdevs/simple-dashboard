@@ -194,13 +194,13 @@ const activities = {
 };
 export const Content: React.FC<ContentProps> = ({ title, breadcrumb }) => {
   return (
-    <section className="container mx-auto sm:px-6 lg:px-8 py-10 bg-[#151A2E]">
+    <section className="container mx-auto sm:px-6 lg:px-8 py-10 bg-[#151A2E] space-y-8">
       <h3 className="text-white font-semibold text-lg">{title}</h3>
       <a href="#" className="text-[#0BB885] font-light text-sm">
         {breadcrumb}
       </a>
       <Cards datas={datas} />
-      <div className="container mx-auto sm:px-6 lg:px-8 py-10 flex space-x-7">
+      <div className="container mx-auto flex space-x-7">
         <ChartContainer />
         <ActivityOverview activity={activities} />
       </div>
