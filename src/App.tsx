@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { Layout } from "./layout/Layout";
+import { Content } from "./layout/Content";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="App">
+    <div className="bg-[#151A2E]">
       <Layout>
-        <p>lalala</p>
+        <Content title="Marketing Dashboard" breadcrumb="Home / Dashboard" />
       </Layout>
     </div>
   );
