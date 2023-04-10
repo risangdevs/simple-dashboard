@@ -175,7 +175,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
         </div>
 
         <div className="lg:pl-72">
-          <div className="sticky top-0 z-40 flex h-16 shrink-0 items-center border-b border-gray-200 bg-white shadow-sm ">
+          <div className="sticky top-0 z-40 flex h-16 shrink-0 items-center border-b border-[#4B5259] bg-white shadow-sm ">
             <button
               type="button"
               className="-m-2.5 p-2.5 text-gray-700 lg:hidden"

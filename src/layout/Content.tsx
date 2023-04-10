@@ -1,5 +1,8 @@
+import { ActivityOverview } from "../components/ActivityOverview";
 import { Cards } from "../components/Cards";
+import { ChartContainer } from "../components/ChartContainer";
 import { Footer } from "../components/Footer";
+import { activity } from "../types";
 
 interface ContentProps {
   title: string;
@@ -117,6 +120,78 @@ const footers = [
   { label: "Privacy Policy", href: "#" },
   { label: "Terms of Use", href: "#" },
 ];
+
+const activities = {
+  trend: "increase",
+  trendValue: "16%",
+  data: [
+    {
+      actor: "Nick Mark",
+      object: "Sara Smith",
+      action: "mentioned",
+      at:
+        new Date().toLocaleDateString("en-GB", {
+          month: "long",
+          year: "numeric",
+          day: "numeric",
+        }) +
+        " at " +
+        new Date().toLocaleTimeString(),
+    },
+    {
+      actor: "Nick Mark",
+      object: "Post Name",
+      action: "removed",
+      at:
+        new Date().toLocaleDateString("en-GB", {
+          month: "long",
+          year: "numeric",
+          day: "numeric",
+        }) +
+        " at " +
+        new Date().toLocaleTimeString(),
+    },
+    {
+      actor: "Patrick Sullivan",
+      object: "New Post",
+      action: "published",
+      at:
+        new Date().toLocaleDateString("en-GB", {
+          month: "long",
+          year: "numeric",
+          day: "numeric",
+        }) +
+        " at " +
+        new Date().toLocaleTimeString(),
+    },
+    {
+      actor: "240+ users",
+      object: "Newsletter #1",
+      action: "subscribed",
+      at:
+        new Date().toLocaleDateString("en-GB", {
+          month: "long",
+          year: "numeric",
+          day: "numeric",
+        }) +
+        " at " +
+        new Date().toLocaleTimeString(),
+    },
+    {
+      actor: "Nick Mark",
+      object: "Post Name #2",
+      action: "suspended",
+      at:
+        new Date().toLocaleDateString("en-GB", {
+          month: "long",
+          year: "numeric",
+          day: "numeric",
+        }) +
+        " at " +
+        new Date().toLocaleTimeString(),
+    },
+  ],
+};
 export const Content: React.FC<ContentProps> = ({ title, breadcrumb }) => {
   return (
     <section className="container mx-auto sm:px-6 lg:px-8 py-10 bg-[#151A2E]">
@@ -125,6 +200,10 @@ export const Content: React.FC<ContentProps> = ({ title, breadcrumb }) => {
         {breadcrumb}
       </a>
       <Cards datas={datas} />
+      <div className="container mx-auto sm:px-6 lg:px-8 py-10 flex space-x-7">
+        <ChartContainer />
+        <ActivityOverview activity={activities} />
+      </div>
       <Footer footers={footers} />
     </section>
   );
