@@ -1,4 +1,5 @@
 import { Cards } from "../components/Cards";
+import { Footer } from "../components/Footer";
 
 interface ContentProps {
   title: string;
@@ -112,6 +113,10 @@ const datas = [
     ),
   },
 ];
+const footers = [
+  { label: "Privacy Policy", href: "#" },
+  { label: "Terms of Use", href: "#" },
+];
 export const Content: React.FC<ContentProps> = ({ title, breadcrumb }) => {
   return (
     <section className="container mx-auto sm:px-6 lg:px-8 py-10 bg-[#151A2E]">
@@ -120,6 +125,7 @@ export const Content: React.FC<ContentProps> = ({ title, breadcrumb }) => {
         {breadcrumb}
       </a>
       <Cards datas={datas} />
+      <Footer footers={footers} />
     </section>
   );
 };
